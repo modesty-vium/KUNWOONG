@@ -1,0 +1,2137 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>건웅기계주식회사 - 승강기·산업기계 부품 전문 제조기업</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet" />
+  <style>
+    /* ============================
+       CSS VARIABLES
+    ============================ */
+    :root {
+      --color-white:       #FFFFFF;
+      --color-bg-section:  #F4F6F9;
+      --color-blue:        #3B8FD4;
+      --color-navy:        #263048;
+      --color-text:        #2B3040;
+      --color-text-sub:    #5A6275;
+      --color-orange:      #E86A2E;
+      --color-border:      #DDE3EE;
+
+      --font-main: 'Pretendard', sans-serif;
+      --radius: 8px;
+      --shadow: 0 2px 16px rgba(0,0,0,0.08);
+      --transition: 0.3s ease;
+    }
+
+    /* ============================
+       RESET & BASE
+    ============================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-main);
+      color: var(--color-text);
+      background: var(--color-white);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    /* ============================
+       UTILITY
+    ============================ */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .section-padding { padding: 80px 0; }
+    .section-title {
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--color-navy);
+      margin-bottom: 12px;
+    }
+    .section-subtitle {
+      font-size: 16px;
+      color: var(--color-text-sub);
+      margin-bottom: 48px;
+    }
+    .section-header { text-align: center; }
+    .badge {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--color-blue);
+      background: #E6EDF8;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+      letter-spacing: 0.05em;
+    }
+    .btn-primary {
+      display: inline-block;
+      background: var(--color-orange);
+      color: var(--color-white);
+      padding: 14px 32px;
+      border-radius: var(--radius);
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      transition: opacity var(--transition);
+    }
+    .btn-primary:hover { opacity: 0.88; }
+    .btn-outline {
+      display: inline-block;
+      background: transparent;
+      color: var(--color-white);
+      padding: 14px 32px;
+      border-radius: var(--radius);
+      font-size: 16px;
+      font-weight: 700;
+      border: 2px solid var(--color-white);
+      cursor: pointer;
+      transition: background var(--transition);
+    }
+    .btn-outline:hover { background: rgba(255,255,255,0.1); }
+
+    /* ============================
+       [SECTION] HEADER / NAV
+       id: section-header
+    ============================ */
+    #section-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--color-border);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    }
+    #section-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+    #nav-logo { display: flex; align-items: center; }
+    #nav-logo img { height: 48px; width: auto; display: block; }
+    #nav-menu {
+      display: flex;
+      gap: 36px;
+    }
+    #nav-menu a {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--color-text);
+      transition: color var(--transition);
+    }
+    #nav-menu a:hover { color: var(--color-blue); }
+    #nav-cta .btn-primary {
+      padding: 10px 22px;
+      font-size: 14px;
+    }
+
+    /* ============================
+       MAIN CONTENT WRAPPER
+    ============================ */
+    #main-content { margin-top: 68px; }
+
+    /* ============================
+       [SECTION] HERO BANNER
+       id: section-hero
+    ============================ */
+    #section-hero {
+      position: relative;
+      background: linear-gradient(135deg, var(--color-navy) 0%, #2D6DB8 100%);
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    #hero-bg-overlay {
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?fm=jpg&q=80&w=1920&auto=format&fit=crop') center/cover no-repeat;
+      opacity: 0.35;
+    }
+    #hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 640px;
+    }
+    #hero-eyebrow {
+      font-size: 14px;
+      font-weight: 600;
+      color: #9BBFDB;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    #hero-headline {
+      font-size: 52px;
+      font-weight: 800;
+      color: var(--color-white);
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    #hero-description {
+      font-size: 18px;
+      color: #A8C8E0;
+      margin-bottom: 36px;
+      line-height: 1.8;
+    }
+    #hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    #hero-slider-dots {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 8px;
+    }
+    #hero-slider-dots span {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.4);
+    }
+    #hero-slider-dots span.active { background: var(--color-white); }
+
+    /* ============================
+       [SECTION] 핵심 지표 (KEY METRICS)
+       id: section-metrics
+    ============================ */
+    #section-metrics {
+      background: var(--color-white);
+      padding: 56px 0;
+      border-bottom: 1px solid var(--color-border);
+    }
+    #metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+    .metric-item {
+      text-align: center;
+      padding: 24px 16px;
+      border-right: 1px solid var(--color-border);
+    }
+    .metric-item:last-child { border-right: none; }
+    .metric-number {
+      font-size: 44px;
+      font-weight: 800;
+      color: var(--color-blue);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .metric-unit { font-size: 20px; font-weight: 600; }
+    .metric-label {
+      font-size: 14px;
+      color: var(--color-text-sub);
+      font-weight: 500;
+    }
+
+    /* ============================
+       [SECTION] 주요 제품 미리보기 (PRODUCTS PREVIEW)
+       id: section-products-preview
+    ============================ */
+    #section-products-preview {
+      background: var(--color-bg-section);
+    }
+    #products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .product-card {
+      background: var(--color-white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    }
+    .product-card-image {
+      height: 200px;
+      background: var(--color-bg-section);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-text-sub);
+      font-size: 14px;
+    }
+    .product-card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .product-card:hover .product-card-image img { transform: scale(1.06); }
+    .product-card-body { padding: 20px; }
+    .product-card-category {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--color-blue);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .product-card-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--color-navy);
+      margin-bottom: 8px;
+    }
+    .product-card-desc {
+      font-size: 14px;
+      color: var(--color-text-sub);
+    }
+    #products-more {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    /* ============================
+       [SECTION] 강점 소개 (STRENGTHS)
+       id: section-strengths
+    ============================ */
+    #section-strengths { background: var(--color-white); }
+    #strengths-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+    }
+    .strength-item { text-align: center; }
+    .strength-icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: #E6EDF8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 28px;
+    }
+    .strength-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--color-navy);
+      margin-bottom: 8px;
+    }
+    .strength-desc {
+      font-size: 14px;
+      color: var(--color-text-sub);
+      line-height: 1.7;
+    }
+
+    /* ============================
+       [SECTION] 주요 거래처 (CLIENTS)
+       id: section-clients
+    ============================ */
+    #section-clients { background: var(--color-bg-section); }
+    #clients-logo-track {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .client-logo {
+      width: 140px;
+      height: 60px;
+      background: var(--color-white);
+      border-radius: var(--radius);
+      border: 1px solid var(--color-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      color: var(--color-text-sub);
+      font-weight: 600;
+    }
+
+    /* ============================
+       [SECTION] 문의 CTA 배너 (CTA BANNER)
+       id: section-cta-banner
+    ============================ */
+    #section-cta-banner {
+      background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-blue) 100%);
+      padding: 80px 0;
+    }
+    #cta-banner-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    #cta-banner-text h2 {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--color-white);
+      margin-bottom: 8px;
+    }
+    #cta-banner-text p {
+      font-size: 16px;
+      color: #A8C8E0;
+    }
+
+    /* ============================
+       [PAGE] 회사소개 (ABOUT PAGE)
+       id: page-about
+    ============================ */
+    #page-about { background: var(--color-white); }
+
+    /* [SECTION] 인사말 - id: section-about-greeting */
+    #section-about-greeting {
+      background: var(--color-white);
+    }
+    #greeting-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    #greeting-image {
+      height: 400px;
+      background: var(--color-bg-section);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    #greeting-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+    #greeting-text blockquote {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--color-navy);
+      border-left: 4px solid var(--color-blue);
+      padding-left: 20px;
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+    #greeting-text p { color: var(--color-text-sub); margin-bottom: 16px; }
+    #greeting-sign {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--color-navy);
+      margin-top: 24px;
+    }
+
+    /* [SECTION] 회사 연혁 - id: section-about-history */
+    #section-about-history { background: var(--color-bg-section); }
+    #history-timeline {
+      position: relative;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    #history-timeline::before {
+      content: '';
+      position: absolute;
+      left: 120px;
+      top: 0; bottom: 0;
+      width: 2px;
+      background: var(--color-border);
+    }
+    .history-item {
+      display: flex;
+      gap: 40px;
+      margin-bottom: 36px;
+      align-items: flex-start;
+    }
+    .history-year {
+      min-width: 80px;
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--color-blue);
+      text-align: right;
+      padding-top: 2px;
+    }
+    .history-dot {
+      position: relative;
+      left: -5px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--color-blue);
+      flex-shrink: 0;
+      margin-top: 6px;
+    }
+    .history-content { flex: 1; }
+    .history-content strong { font-weight: 700; color: var(--color-navy); }
+    .history-content p { font-size: 14px; color: var(--color-text-sub); }
+
+    /* [SECTION] 비전 & 미션 - id: section-about-vision */
+    #section-about-vision { background: var(--color-white); }
+    #vision-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+    .vision-card {
+      padding: 40px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    #vision-card-vision { background: var(--color-navy); color: var(--color-white); }
+    #vision-card-mission { background: var(--color-bg-section); }
+    .vision-card-label {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      opacity: 0.7;
+    }
+    .vision-card-text {
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+    .vision-card-sub {
+      margin-top: 16px;
+      font-size: 14px;
+      line-height: 1.8;
+      opacity: 0.8;
+    }
+
+    /* [SECTION] 오시는 길 - id: section-about-location */
+    #section-about-location { background: var(--color-bg-section); }
+    #location-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+    #location-map {
+      height: 360px;
+      background: #D0DDE8;
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-text-sub);
+      font-weight: 600;
+    }
+    .location-info-item {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .location-info-icon {
+      width: 36px;
+      height: 36px;
+      background: #E6EDF8;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 16px;
+    }
+    .location-info-text strong { display: block; font-weight: 700; color: var(--color-navy); }
+    .location-info-text span { font-size: 14px; color: var(--color-text-sub); }
+
+    /* ============================
+       [PAGE] 제품 (PRODUCTS PAGE)
+       id: page-products
+    ============================ */
+    #page-products { background: var(--color-white); }
+
+    /* [SECTION] 제품 필터 - id: section-products-filter */
+    #section-products-filter {
+      background: var(--color-white);
+      padding: 40px 0 0;
+    }
+    #products-filter-tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    .filter-tab {
+      padding: 8px 20px;
+      border-radius: 24px;
+      border: 1px solid var(--color-border);
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all var(--transition);
+      color: var(--color-text-sub);
+      background: var(--color-white);
+    }
+    .filter-tab.active {
+      background: var(--color-blue);
+      color: var(--color-white);
+      border-color: var(--color-blue);
+    }
+    #products-search {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+    #products-search input {
+      flex: 1;
+      padding: 12px 16px;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      font-size: 15px;
+      font-family: var(--font-main);
+      color: var(--color-text);
+    }
+    #products-search button {
+      padding: 12px 24px;
+      background: var(--color-blue);
+      color: var(--color-white);
+      border: none;
+      border-radius: var(--radius);
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    /* [SECTION] 제품 목록 - id: section-products-list */
+    #section-products-list { background: var(--color-bg-section); }
+    #products-list-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .product-list-card {
+      background: var(--color-white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .product-list-card-image {
+      height: 160px;
+      background: var(--color-bg-section);
+      overflow: hidden;
+    }
+    .product-list-card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .product-list-card:hover .product-list-card-image img { transform: scale(1.06); }
+    .product-list-card-body { padding: 16px; }
+    .product-part-number {
+      font-size: 11px;
+      color: var(--color-text-sub);
+      margin-bottom: 4px;
+    }
+    .product-list-card-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--color-navy);
+      margin-bottom: 8px;
+    }
+    .product-spec {
+      font-size: 12px;
+      color: var(--color-text-sub);
+      margin-bottom: 4px;
+    }
+    .product-list-card-btn {
+      margin-top: 12px;
+      width: 100%;
+      padding: 9px;
+      border: 1px solid var(--color-blue);
+      background: transparent;
+      color: var(--color-blue);
+      border-radius: var(--radius);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    /* [SECTION] 제품 상세 (모달 or 별도 페이지 placeholder)
+       id: section-product-detail */
+    #section-product-detail {
+      background: var(--color-white);
+    }
+    #product-detail-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+    #product-detail-gallery {
+      height: 400px;
+      background: var(--color-bg-section);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-text-sub);
+    }
+    .product-detail-spec-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+    }
+    .product-detail-spec-table th,
+    .product-detail-spec-table td {
+      padding: 10px 14px;
+      border: 1px solid var(--color-border);
+      font-size: 14px;
+    }
+    .product-detail-spec-table th {
+      background: var(--color-bg-section);
+      font-weight: 600;
+      color: var(--color-navy);
+      width: 36%;
+    }
+
+    /* ============================
+       [PAGE] 기술력 (TECHNOLOGY PAGE)
+       id: page-technology
+    ============================ */
+    #page-technology {}
+
+    /* [SECTION] 제조 공정 - id: section-tech-process */
+    #section-tech-process { background: var(--color-white); }
+    #process-steps {
+      display: flex;
+      gap: 0;
+      align-items: flex-start;
+      justify-content: space-between;
+      position: relative;
+    }
+    #process-steps::before {
+      content: '';
+      position: absolute;
+      top: 36px;
+      left: 10%;
+      right: 10%;
+      height: 2px;
+      background: var(--color-blue);
+    }
+    .process-step {
+      text-align: center;
+      flex: 1;
+      position: relative;
+    }
+    .process-step-number {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: var(--color-blue);
+      color: var(--color-white);
+      font-size: 20px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      position: relative;
+      z-index: 1;
+    }
+    .process-step-label {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--color-navy);
+      margin-bottom: 6px;
+    }
+    .process-step-desc { font-size: 13px; color: var(--color-text-sub); }
+
+    /* [SECTION] 품질 인증 - id: section-tech-certification */
+    #section-tech-certification { background: var(--color-bg-section); }
+    #cert-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .cert-card {
+      background: var(--color-white);
+      border-radius: var(--radius);
+      padding: 24px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+    .cert-card-image {
+      height: 120px;
+      background: var(--color-bg-section);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      font-size: 13px;
+      color: var(--color-text-sub);
+    }
+    .cert-card-title { font-size: 15px; font-weight: 700; color: var(--color-navy); }
+    .cert-card-date { font-size: 12px; color: var(--color-text-sub); margin-top: 4px; }
+
+    /* [SECTION] 설비 현황 - id: section-tech-equipment */
+    #section-tech-equipment { background: var(--color-white); }
+    #equipment-table-wrap { overflow-x: auto; }
+    #equipment-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    #equipment-table th {
+      background: var(--color-navy);
+      color: var(--color-white);
+      padding: 12px 16px;
+      font-size: 14px;
+      text-align: left;
+    }
+    #equipment-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--color-border);
+      font-size: 14px;
+    }
+    #equipment-table tr:nth-child(even) td { background: var(--color-bg-section); }
+
+    /* ============================
+       [PAGE] 납품실적 (REFERENCES PAGE)
+       id: page-references
+    ============================ */
+    #page-references {}
+
+    /* [SECTION] 납품 통계 - id: section-ref-stats */
+    #section-ref-stats { background: var(--color-navy); padding: 64px 0; }
+    #ref-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+    }
+    .ref-stat-item { text-align: center; border-right: 1px solid rgba(255,255,255,0.15); }
+    .ref-stat-item:last-child { border-right: none; }
+    .ref-stat-number { font-size: 52px; font-weight: 800; color: var(--color-white); }
+    .ref-stat-label { font-size: 15px; color: rgba(255,255,255,0.65); margin-top: 4px; }
+
+    /* [SECTION] 주요 거래처 & 납품 프로젝트 - id: section-ref-projects */
+    #section-ref-projects { background: var(--color-white); }
+    #ref-projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .ref-project-card {
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+    .ref-project-client {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--color-blue);
+      margin-bottom: 8px;
+    }
+    .ref-project-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--color-navy);
+      margin-bottom: 6px;
+    }
+    .ref-project-desc { font-size: 13px; color: var(--color-text-sub); }
+    .ref-project-year { font-size: 12px; color: var(--color-text-sub); margin-top: 12px; }
+
+    /* ============================
+       [PAGE] 공지사항 / 뉴스 (NEWS PAGE)
+       id: page-news
+    ============================ */
+    #page-news {}
+
+    /* [SECTION] 뉴스 목록 - id: section-news-list */
+    #section-news-list { background: var(--color-white); }
+    #news-list { display: flex; flex-direction: column; gap: 0; }
+    .news-item {
+      display: flex;
+      gap: 32px;
+      align-items: flex-start;
+      padding: 28px 0;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .news-item-date {
+      min-width: 80px;
+      text-align: center;
+    }
+    .news-date-day { font-size: 32px; font-weight: 800; color: var(--color-blue); }
+    .news-date-month { font-size: 12px; color: var(--color-text-sub); }
+    .news-item-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 10px;
+      border-radius: 12px;
+      background: #E6EDF8;
+      color: var(--color-blue);
+      margin-bottom: 6px;
+    }
+    .news-item-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--color-navy);
+      margin-bottom: 6px;
+    }
+    .news-item-preview { font-size: 14px; color: var(--color-text-sub); }
+
+    /* ============================
+       [PAGE] 문의하기 (CONTACT PAGE)
+       id: page-contact
+    ============================ */
+    #page-contact {}
+
+    /* [SECTION] 문의 폼 - id: section-contact-form */
+    #section-contact-form { background: var(--color-bg-section); }
+    #contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 64px;
+      align-items: start;
+    }
+    #contact-info-panel {}
+    .contact-info-card {
+      background: var(--color-white);
+      border-radius: var(--radius);
+      padding: 32px;
+      box-shadow: var(--shadow);
+      margin-bottom: 16px;
+    }
+    .contact-info-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--color-navy);
+      margin-bottom: 20px;
+    }
+    .contact-info-row {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 16px;
+      font-size: 14px;
+    }
+    .contact-info-row-icon { font-size: 18px; width: 24px; }
+    .contact-info-row-text strong { display: block; font-weight: 700; color: var(--color-navy); }
+    .contact-info-row-text span { color: var(--color-text-sub); }
+    #contact-form-panel {
+      background: var(--color-white);
+      border-radius: var(--radius);
+      padding: 40px;
+      box-shadow: var(--shadow);
+    }
+    .form-group { margin-bottom: 20px; }
+    .form-group label {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--color-navy);
+      margin-bottom: 6px;
+    }
+    .form-group label .required { color: var(--color-orange); margin-left: 2px; }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      font-size: 15px;
+      font-family: var(--font-main);
+      color: var(--color-text);
+    }
+    .form-group textarea { height: 140px; resize: vertical; }
+    .form-group-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    #contact-form-file {
+      border: 2px dashed var(--color-border);
+      border-radius: var(--radius);
+      padding: 24px;
+      text-align: center;
+      color: var(--color-text-sub);
+      font-size: 14px;
+    }
+    #form-submit {
+      width: 100%;
+      margin-top: 8px;
+    }
+
+    /* [SECTION] 지도 - id: section-contact-map */
+    #section-contact-map { background: var(--color-white); padding: 0; }
+    #contact-map-embed {
+      height: 400px;
+      background: #D0DDE8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-text-sub);
+      font-weight: 600;
+      font-size: 18px;
+    }
+
+    /* ============================
+       [SECTION] FOOTER
+       id: section-footer
+    ============================ */
+    #section-footer {
+      background: #FFFFFF;
+      color: var(--color-text-sub);
+      border-top: 1px solid var(--color-border);
+      padding: 60px 0 32px;
+    }
+    #footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    #footer-logo { margin-bottom: 16px; }
+    #footer-logo img { height: 80px; width: auto; display: block; }
+    #footer-tagline {
+      font-size: 13px;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+    .footer-col-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--color-navy);
+      margin-bottom: 16px;
+    }
+    .footer-col ul { display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul a {
+      font-size: 13px;
+      color: var(--color-text-sub);
+      transition: color var(--transition);
+    }
+    .footer-col ul a:hover { color: var(--color-navy); }
+    #footer-bottom {
+      border-top: 1px solid var(--color-border);
+      padding-top: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    #footer-bottom a { color: var(--color-text-sub); }
+
+    /* ============================
+       HAMBURGER NAVIGATION
+    ============================ */
+    #nav-hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      cursor: pointer;
+      padding: 6px;
+      background: none;
+      border: none;
+    }
+    #nav-hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--color-navy);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+    #nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    #nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    #nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    #nav-mobile-menu {
+      display: none;
+      position: fixed;
+      top: 68px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #fff;
+      z-index: 99;
+      flex-direction: column;
+      padding: 32px 24px;
+      overflow-y: auto;
+      border-top: 1px solid var(--color-border);
+    }
+    #nav-mobile-menu.open { display: flex; }
+    #nav-mobile-menu > ul {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-bottom: 32px;
+    }
+    #nav-mobile-menu > ul li a {
+      display: block;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--color-navy);
+      padding: 16px 0;
+      border-bottom: 1px solid var(--color-border);
+      transition: color var(--transition);
+    }
+    #nav-mobile-menu > ul li a:hover { color: var(--color-blue); }
+    #nav-mobile-cta .btn-primary { width: 100%; text-align: center; display: block; }
+
+    /* ============================
+       RESPONSIVE — TABLET (≤1024px)
+    ============================ */
+    @media (max-width: 1024px) {
+      #metrics-grid { grid-template-columns: repeat(2, 1fr); }
+      .metric-item:nth-child(2) { border-right: none; }
+      .metric-item:nth-child(3),
+      .metric-item:nth-child(4) { border-top: 1px solid var(--color-border); }
+      .metric-item:nth-child(4) { border-right: none; }
+      #products-grid { grid-template-columns: repeat(2, 1fr); }
+      #strengths-grid { grid-template-columns: repeat(2, 1fr); }
+      #products-list-grid { grid-template-columns: repeat(2, 1fr); }
+      #cert-grid { grid-template-columns: repeat(2, 1fr); }
+      #footer-top { grid-template-columns: repeat(2, 1fr); }
+      #hero-headline { font-size: 40px; }
+      #greeting-layout { grid-template-columns: 1fr; gap: 32px; }
+      #location-layout { grid-template-columns: 1fr; }
+      #product-detail-layout { grid-template-columns: 1fr; gap: 32px; }
+      #contact-layout { grid-template-columns: 1fr; gap: 32px; }
+      #ref-projects-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* ============================
+       RESPONSIVE — MOBILE (≤768px)
+    ============================ */
+    @media (max-width: 768px) {
+      #nav-menu, #nav-cta { display: none; }
+      #nav-hamburger { display: flex; }
+
+      .section-title { font-size: 24px; }
+      .section-padding { padding: 56px 0; }
+      #hero-headline { font-size: 32px; }
+      #hero-description { font-size: 16px; }
+      #section-hero { min-height: 420px; }
+      #hero-actions { flex-direction: column; gap: 12px; }
+      #hero-actions .btn-primary,
+      #hero-actions .btn-outline { text-align: center; }
+
+      #metrics-grid { grid-template-columns: repeat(2, 1fr); }
+      #products-grid { grid-template-columns: 1fr; }
+      #strengths-grid { grid-template-columns: repeat(2, 1fr); }
+      #vision-grid { grid-template-columns: 1fr; }
+      #ref-projects-grid { grid-template-columns: 1fr; }
+
+      #process-steps { flex-direction: column; align-items: center; gap: 24px; }
+      #process-steps::before { display: none; }
+
+      #ref-stats-grid { grid-template-columns: 1fr; }
+      .ref-stat-item {
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,0.15);
+        padding: 28px 16px;
+      }
+      .ref-stat-item:last-child { border-bottom: none; }
+
+      .news-item { flex-direction: column; gap: 12px; }
+
+      #cta-banner-inner { flex-direction: column; text-align: center; }
+      #cta-banner-text h2 { font-size: 24px; }
+
+      .form-group-row { grid-template-columns: 1fr; }
+      #contact-form-panel { padding: 24px; }
+
+      #footer-top { grid-template-columns: 1fr; gap: 32px; }
+      #footer-bottom { flex-direction: column; align-items: flex-start; }
+    }
+
+    /* ============================
+       RESPONSIVE — SMALL (≤480px)
+    ============================ */
+    @media (max-width: 480px) {
+      .container { padding: 0 16px; }
+      #hero-headline { font-size: 26px; }
+      .section-title { font-size: 20px; }
+      .metric-number { font-size: 32px; }
+      #strengths-grid { grid-template-columns: 1fr; }
+      #products-list-grid { grid-template-columns: 1fr; }
+      #cert-grid { grid-template-columns: 1fr; }
+      .ref-stat-number { font-size: 40px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER & NAVIGATION
+       id: section-header / section-nav
+  ============================================================ -->
+  <header id="section-header">
+    <nav id="section-nav" class="container">
+      <a href="#section-hero" id="nav-logo">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAbwAAADJCAYAAABYKIcZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMNaVRYdFhNTDpjb20uYWRvYmUueG1wAAAAAAA8P3hwYWNrZXQgYmVnaW49J++7vycgaWQ9J1c1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCc/Pg0KPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyI+PHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj48cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0idXVpZDpmYWY1YmRkNS1iYTNkLTExZGEtYWQzMS1kMzNkNzUxODJmMWIiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyI+PHhtcDpDcmVhdG9yVG9vbD5BZG9iZSBJbGx1c3RyYXRvciAzMC4xIChXaW5kb3dzKTwveG1wOkNyZWF0b3JUb29sPjx4bXA6Y3JlYXRvcnRvb2w+QWRvYmUgSWxsdXN0cmF0b3IgMzAuMSAoV2luZG93cyk8L3htcDpjcmVhdG9ydG9vbD48L3JkZjpEZXNjcmlwdGlvbj48cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0idXVpZDpmYWY1YmRkNS1iYTNkLTExZGEtYWQzMS1kMzNkNzUxODJmMWIiIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyI+PGRjOnRpdGxlPjxyZGY6QWx0IHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+PHJkZjpsaSB4bWw6bGFuZz0ieC1kZWZhdWx0Ij7rqoXtlago7LWc7KKFX+ycoOyKueq3oCk8L3JkZjpsaT48L3JkZjpBbHQ+DQoJCQk8L2RjOnRpdGxlPjwvcmRmOkRlc2NyaXB0aW9uPjwvcmRmOlJERj48L3g6eG1wbWV0YT4NCjw/eHBhY2tldCBlbmQ9J3cnPz7ZY59KAAA97klEQVR4Xu2daZfjoK6uX+EhY83d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" alt="건웅기계 로고" />
+      </a>
+      <ul id="nav-menu">
+        <li><a href="#page-about">회사소개</a></li>
+        <li><a href="#page-products">제품</a></li>
+        <li><a href="#page-technology">기술력</a></li>
+        <li><a href="#page-references">납품실적</a></li>
+        <li><a href="#page-news">뉴스</a></li>
+        <li><a href="#page-contact">문의하기</a></li>
+      </ul>
+      <div id="nav-cta">
+        <a href="https://forms.gle/qaMF1XsmktgZLAMK8" target="_blank" class="btn-primary">견적 문의</a>
+      </div>
+      <button id="nav-hamburger" aria-label="메뉴 열기">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
+  <div id="nav-mobile-menu">
+    <ul>
+      <li><a href="#page-about">회사소개</a></li>
+      <li><a href="#page-products">제품</a></li>
+      <li><a href="#page-technology">기술력</a></li>
+      <li><a href="#page-references">납품실적</a></li>
+      <li><a href="#page-news">뉴스</a></li>
+      <li><a href="#page-contact">문의하기</a></li>
+    </ul>
+    <div id="nav-mobile-cta">
+      <a href="https://forms.gle/qaMF1XsmktgZLAMK8" target="_blank" class="btn-primary">견적 문의</a>
+    </div>
+  </div>
+
+  <div id="main-content">
+
+    <!-- ============================================================
+         [HOME] HERO BANNER
+         id: section-hero
+    ============================================================ -->
+    <section id="section-hero">
+      <div id="hero-bg-overlay"></div>
+      <div class="container">
+        <div id="hero-content">
+          <p id="hero-eyebrow">KUNWOONG MACHINERY CO.,LTD.</p>
+          <h1 id="hero-headline">정밀 가공·기계 제작의<br/>믿음직한 파트너</h1>
+          <p id="hero-description">
+            레이저 가공부터 승강기 부품·자동화 기계까지<br/>
+            건웅기계주식회사가 품질로 답합니다
+          </p>
+          <div id="hero-actions">
+            <a href="#page-products" class="btn-primary">제품 보기</a>
+            <a href="https://forms.gle/qaMF1XsmktgZLAMK8" target="_blank" class="btn-outline">견적 문의</a>
+          </div>
+        </div>
+      </div>
+      <div id="hero-slider-dots">
+        <span class="active"></span>
+        <span></span>
+        <span></span>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         [HOME] 핵심 지표 (KEY METRICS)
+         id: section-metrics
+    ============================================================ -->
+    <section id="section-metrics">
+      <div class="container">
+        <div id="metrics-grid">
+          <div class="metric-item">
+            <div class="metric-number">20<span class="metric-unit">+</span></div>
+            <div class="metric-label">업력 (년)</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-number">500<span class="metric-unit">+</span></div>
+            <div class="metric-label">누적 납품 거래처</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-number">5<span class="metric-unit">종</span></div>
+            <div class="metric-label">보유 인증</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-number">50<span class="metric-unit">명</span></div>
+            <div class="metric-label">임직원 수</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         [HOME] 주요 제품 미리보기 (PRODUCTS PREVIEW)
+         id: section-products-preview
+    ============================================================ -->
+    <section id="section-products-preview" class="section-padding">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge">PRODUCTS</span>
+          <h2 class="section-title">주요 사업 분야</h2>
+          <p class="section-subtitle">레이저 가공부터 자동화 기계·승강기 부품까지 폭넓은 제조 역량을 갖추고 있습니다</p>
+        </div>
+        <div id="products-grid">
+          <div class="product-card">
+            <div class="product-card-image">
+              <img src="https://images.unsplash.com/photo-1738162837451-2041c1418f54?fm=jpg&q=80&w=800&auto=format&fit=crop" alt="레이저 가공" />
+            </div>
+            <div class="product-card-body">
+              <p class="product-card-category">LASER PROCESSING</p>
+              <h3 class="product-card-title">레이저 가공</h3>
+              <p class="product-card-desc">고정밀 레이저 커팅으로 복잡한 형상도 정확하게 가공</p>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-card-image">
+              <img src="https://images.unsplash.com/photo-1738162837619-5d0b158abcec?fm=jpg&q=80&w=800&auto=format&fit=crop" alt="절단·절곡 가공" />
+            </div>
+            <div class="product-card-body">
+              <p class="product-card-category">CUTTING &amp; BENDING</p>
+              <h3 class="product-card-title">절단·절곡 가공</h3>
+              <p class="product-card-desc">금속 소재의 정밀 절단 및 절곡 성형 가공</p>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-card-image">
+              <img src="https://plus.unsplash.com/premium_photo-1661963304176-3eaf288746d1?fm=jpg&q=80&w=800&auto=format&fit=crop" alt="산업 기계 제작" />
+            </div>
+            <div class="product-card-body">
+              <p class="product-card-category">INDUSTRIAL MACHINERY</p>
+              <h3 class="product-card-title">산업 기계 제작</h3>
+              <p class="product-card-desc">다양한 산업 현장에 맞춤 적용되는 전용 기계 제작</p>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-card-image">
+              <img src="https://plus.unsplash.com/premium_photo-1661881781756-00742d2620d1?fm=jpg&q=80&w=800&auto=format&fit=crop" alt="자동화 기계 제작" />
+            </div>
+            <div class="product-card-body">
+              <p class="product-card-category">AUTOMATION</p>
+              <h3 class="product-card-title">자동화 기계 제작</h3>
+              <p class="product-card-desc">생산 효율을 극대화하는 자동화 설비 설계 및 제작</p>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-card-image">
+              <img src="https://images.unsplash.com/photo-1745030990090-03f7e17e1b70?fm=jpg&q=80&w=800&auto=format&fit=crop" alt="승강기 부품 제작" />
+            </div>
+            <div class="product-card-body">
+              <p class="product-card-category">ELEVATOR PARTS</p>
+              <h3 class="product-card-title">승강기 부품 제작</h3>
+              <p class="product-card-desc">도어·구동·안전 장치 등 승강기 전 부품 제조 공급</p>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-card-image">
+              <img src="https://images.unsplash.com/photo-1682084252400-f3f830e0b399?fm=jpg&q=80&w=800&auto=format&fit=crop" alt="주차·물류 부품 제작" />
+            </div>
+            <div class="product-card-body">
+              <p class="product-card-category">PARKING &amp; LOGISTICS</p>
+              <h3 class="product-card-title">주차·물류 부품 제작</h3>
+              <p class="product-card-desc">주차 설비 및 물류 자동화 시스템용 전용 부품 제작</p>
+            </div>
+          </div>
+        </div>
+        <div id="products-more">
+          <a href="#page-products" class="btn-primary">전체 제품 보기</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         [HOME] 강점 소개 (STRENGTHS)
+         id: section-strengths
+    ============================================================ -->
+    <section id="section-strengths" class="section-padding">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge">WHY US</span>
+          <h2 class="section-title">건웅기계가 선택받는 이유</h2>
+          <p class="section-subtitle">품질, 납기, 기술, 서비스 — 모든 면에서 신뢰를 드립니다</p>
+        </div>
+        <div id="strengths-grid">
+          <div class="strength-item">
+            <div class="strength-icon">🏆</div>
+            <h3 class="strength-title">엄격한 품질관리</h3>
+            <p class="strength-desc">전수 검사와 ISO 인증 기반의<br/>체계적인 품질 보증 시스템</p>
+          </div>
+          <div class="strength-item">
+            <div class="strength-icon">🚚</div>
+            <h3 class="strength-title">빠른 납기</h3>
+            <p class="strength-desc">재고 상시 보유 및 최적화된<br/>생산 프로세스로 신속 납품</p>
+          </div>
+          <div class="strength-item">
+            <div class="strength-icon">⚙️</div>
+            <h3 class="strength-title">20년 기술력</h3>
+            <p class="strength-desc">숙련된 엔지니어와 최신 설비로<br/>정밀 가공 부품 생산</p>
+          </div>
+          <div class="strength-item">
+            <div class="strength-icon">🔧</div>
+            <h3 class="strength-title">사후 서비스</h3>
+            <p class="strength-desc">납품 후에도 신속한 기술 지원과<br/>AS 서비스 제공</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         [HOME] 주요 거래처 (CLIENTS)
+         id: section-clients
+    ============================================================ -->
+    <section id="section-clients" class="section-padding">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge">CLIENTS</span>
+          <h2 class="section-title">주요 거래처</h2>
+          <p class="section-subtitle">국내 주요 엘리베이터 제조사와 건설사가 건웅기계를 선택합니다</p>
+        </div>
+        <div id="clients-logo-track">
+          <div class="client-logo">거래처 로고 1</div>
+          <div class="client-logo">거래처 로고 2</div>
+          <div class="client-logo">거래처 로고 3</div>
+          <div class="client-logo">거래처 로고 4</div>
+          <div class="client-logo">거래처 로고 5</div>
+          <div class="client-logo">거래처 로고 6</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         [HOME] 문의 CTA 배너 (CTA BANNER)
+         id: section-cta-banner
+    ============================================================ -->
+    <section id="section-cta-banner">
+      <div class="container">
+        <div id="cta-banner-inner">
+          <div id="cta-banner-text">
+            <h2>지금 바로 견적을 문의하세요</h2>
+            <p>빠른 검토 후 24시간 이내 답변 드립니다</p>
+          </div>
+          <a href="https://forms.gle/qaMF1XsmktgZLAMK8" target="_blank" class="btn-primary">견적 문의하기</a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         PAGE: 회사소개 (ABOUT)
+         id: page-about
+    ============================================================ -->
+    <div id="page-about">
+
+      <!-- 인사말 -->
+      <section id="section-about-greeting" class="section-padding">
+        <div class="container">
+          <div id="greeting-layout">
+            <div id="greeting-image">
+              <img src="https://images.unsplash.com/photo-1528953030358-b0c7de371f1f?fm=jpg&q=80&w=800&auto=format&fit=crop" alt="대표이사 사진" />
+            </div>
+            <div id="greeting-text">
+              <span class="badge">CEO MESSAGE</span>
+              <h2 class="section-title">인사말</h2>
+              <blockquote>
+                "품질이 곧 신뢰입니다.<br/>건웅기계는 부품 하나하나에 책임을 다합니다."
+              </blockquote>
+              <p>건웅기계주식회사를 방문해 주신 여러분께 진심으로 감사드립니다. 저희는 레이저 가공, 절단·절곡 가공, 승강기 부품 및 자동화 기계 제작 전문기업으로 경기도 이천에서 성실하게 기술을 쌓아왔습니다.</p>
+              <p>앞으로도 기술 혁신과 품질 경영을 통해 고객 여러분의 성공적인 사업을 지원하겠습니다.</p>
+              <p id="greeting-sign">건웅기계주식회사 대표이사 &nbsp;유 승 균</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 회사 연혁 -->
+      <section id="section-about-history" class="section-padding">
+        <div class="container">
+          <div class="section-header">
+            <span class="badge">HISTORY</span>
+            <h2 class="section-title">회사 연혁</h2>
+            <p class="section-subtitle">건웅기계의 성장 발자취</p>
+          </div>
+          <div id="history-timeline">
+            <div class="history-item">
+              <div class="history-year">2024</div>
+              <div class="history-dot"></div>
+              <div class="history-content">
+                <strong>ISO 9001 재인증 획득</strong>
+                <p>품질경영시스템 국제인증 갱신</p>
+              </div>
+            </div>
+            <div class="history-item">
+              <div class="history-year">2020</div>
+              <div class="history-dot"></div>
+              <div class="history-content">
+                <strong>제2공장 증설</strong>
+                <p>생산 용량 2배 확대, 연간 납품량 00만 개 달성</p>
+              </div>
+            </div>
+            <div class="history-item">
+              <div class="history-year">2015</div>
+              <div class="history-dot"></div>
+              <div class="history-content">
+                <strong>주요 거래처 OO사 납품 계약 체결</strong>
+                <p>국내 주요 엘리베이터 제조사와 전략적 파트너십 구축</p>
+              </div>
+            </div>
+            <div class="history-item">
+              <div class="history-year">2004</div>
+              <div class="history-dot"></div>
+              <div class="history-content">
+                <strong>건웅기계 설립</strong>
+                <p>엘리베이터 부품 전문 제조기업으로 창업</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 비전 & 미션 -->
+      <section id="section-about-vision" class="section-padding">
+        <div class="container">
+          <div class="section-header">
+            <span class="badge">VISION & MISSION</span>
+            <h2 class="section-title">비전 & 미션</h2>
+          </div>
+          <div id="vision-grid">
+            <div class="vision-card" id="vision-card-vision">
+              <p class="vision-card-label">OUR VISION</p>
+              <p class="vision-card-text">엘리베이터 부품 분야의<br/>글로벌 Top 파트너</p>
+              <p class="vision-card-sub">기술 혁신과 품질 신뢰를 바탕으로 국내를 넘어 글로벌 시장에서 인정받는 부품 제조 기업으로 성장합니다.</p>
+            </div>
+            <div class="vision-card" id="vision-card-mission">
+              <p class="vision-card-label" style="color: var(--color-blue);">OUR MISSION</p>
+              <p class="vision-card-text" style="color: var(--color-navy);">안전한 부품으로<br/>사람들의 일상을 지킨다</p>
+              <p class="vision-card-sub" style="color: var(--color-text-sub);">엘리베이터를 이용하는 모든 사람의 안전을 최우선 가치로 삼아, 타협 없는 품질의 부품을 공급합니다.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 오시는 길 -->
+      <section id="section-about-location" class="section-padding">
+        <div class="container">
+          <div class="section-header">
+            <span class="badge">LOCATION</span>
+            <h2 class="section-title">오시는 길</h2>
+          </div>
+          <div id="location-layout">
+            <div id="location-map">카카오맵 / 구글맵 임베드 영역</div>
+            <div id="location-info">
+              <div class="location-info-item">
+                <div class="location-info-icon">📍</div>
+                <div class="location-info-text">
+                  <strong>주소</strong>
+                  <span>경기도 이천시 부발읍 황무로 2065번길 72-183</span>
+                </div>
+              </div>
+              <div class="location-info-item">
+                <div class="location-info-icon">📞</div>
+                <div class="location-info-text">
+                  <strong>대표 전화</strong>
+                  <span>031-635-7817</span>
+                </div>
+              </div>
+              <div class="location-info-item">
+                <div class="location-info-icon">📱</div>
+                <div class="location-info-text">
+                  <strong>휴대전화 (대표이사)</strong>
+                  <span>010-9980-9685</span>
+                </div>
+              </div>
+              <div class="location-info-item">
+                <div class="location-info-icon">✉️</div>
+                <div class="location-info-text">
+                  <strong>이메일</strong>
+                  <span>kunwoong2002@hanmail.net</span>
+                </div>
+              </div>
+              <div class="location-info-item">
+                <div class="location-info-icon">🕐</div>
+                <div class="location-info-text">
+                  <strong>운영시간</strong>
+                  <span>평일 09:00 – 18:00 (점심 12:00–13:00)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- /page-about -->
+
+
+    <!-- ============================================================
+         PAGE: 제품 (PRODUCTS)
+         id: page-products
+    ============================================================ -->
+    <div id="page-products">
+
+      <!-- 제품 필터 & 검색 -->
+      <section id="section-products-filter" class="container">
+        <div class="section-header" style="padding-top: 80px;">
+          <span class="badge">PRODUCTS</span>
+          <h2 class="section-title">제품 목록</h2>
+          <p class="section-subtitle">카테고리별로 엘리베이터 부품을 검색하세요</p>
+        </div>
+        <div id="products-filter-tabs">
+          <button class="filter-tab active">전체</button>
+          <button class="filter-tab">도어 시스템</button>
+          <button class="filter-tab">구동 시스템</button>
+          <button class="filter-tab">안전 장치</button>
+          <button class="filter-tab">기타 부품</button>
+        </div>
+        <div id="products-search">
+          <input type="text" placeholder="품번 또는 제품명으로 검색" />
+          <button>검색</button>
+        </div>
+      </section>
+
+      <!-- 제품 목록 그리드 -->
+      <section id="section-products-list" class="section-padding">
+        <div class="container">
+          <div id="products-list-grid">
+            <div class="product-list-card">
+              <div class="product-list-card-image">
+                <img src="https://images.unsplash.com/photo-1745030990090-03f7e17e1b70?fm=jpg&q=80&w=600&auto=format&fit=crop" alt="도어 구동 모터" />
+              </div>
+              <div class="product-list-card-body">
+                <p class="product-part-number">품번: GW-D001</p>
+                <h3 class="product-list-card-title">도어 구동 모터</h3>
+                <p class="product-spec">소재: 알루미늄 합금</p>
+                <p class="product-spec">규격: 120 × 80 × 60mm</p>
+                <a href="https://forms.gle/qaMF1XsmktgZLAMK8" target="_blank" class="product-list-card-btn" style="display:block;text-align:center;text-decoration:none;">상세 보기 / 견적 문의</a>
+              </div>
+            </div>
+            <div class="product-list-card">
+              <div class="product-list-card-image">
+                <img src="https://images.unsplash.com/photo-1652345408115-a5f6e98121c9?fm=jpg&q=80&w=600&auto=format&fit=crop" alt="도어 행거 롤러" />
+              </div>
+              <div class="product-list-card-body">
+                <p class="product-part-number">품번: GW-D002</p>
+                <h3 class="product-list-card-title">도어 행거 롤러</h3>
+                <p class="product-spec">소재: 스테인리스 스틸</p>
+                <p class="product-spec">규격: φ60 × L80mm</p>
+                <a href="https://forms.gle/qaMF1XsmktgZLAMK8" target="_blank" class="product-list-card-btn" style="display:block;text-align:center;text-decoration:none;">상세 보기 / 견적 문의</a>
+              </div>
+            </div>
+            <div class="product-list-card">
+              <div class="product-list-card-image">
+                <img src="https://images.unsplash.com/photo-1738162837451-2041c1418f54?fm=jpg&q=80&w=600&auto=format&fit=crop" alt="비상 정지 장치" />
+              </div>
+              <div class="product-list-card-body">
+                <p class="product-part-number">품번: GW-S001</p>
+                <h3 class="product-list-card-title">비상 정지 장치</h3>
+                <p class="product-spec">소재: 강화 탄소강</p>
+                <p class="product-spec">규격: 200 × 150 × 90mm</p>
+                <a href="https://forms.gle/qaMF1XsmktgZLAMK8" target="_blank" class="product-list-card-btn" style="display:block;text-align:center;text-decoration:none;">상세 보기 / 견적 문의</a>
+              </div>
+            </div>
+            <div class="product-list-card">
+              <div class="product-list-card-image">
+                <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?fm=jpg&q=80&w=600&auto=format&fit=crop" alt="권상기 브레이크" />
+              </div>
+              <div class="product-list-card-body">
+                <p class="product-part-number">품번: GW-M001</p>
+                <h3 class="product-list-card-title">권상기 브레이크</h3>
+                <p class="product-spec">소재: 주철 / 마찰재</p>
+                <p class="product-spec">규격: φ300 × L120mm</p>
+                <a href="https://forms.gle/qaMF1XsmktgZLAMK8" target="_blank" class="product-list-card-btn" style="display:block;text-align:center;text-decoration:none;">상세 보기 / 견적 문의</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 제품 상세 페이지 (구조 샘플) -->
+      <section id="section-product-detail" class="section-padding">
+        <div class="container">
+          <span class="badge">PRODUCT DETAIL</span>
+          <h2 class="section-title" style="margin-top: 8px;">제품 상세 — 도어 구동 모터 (GW-D001)</h2>
+          <div id="product-detail-layout" style="margin-top: 40px;">
+            <div id="product-detail-gallery">제품 상세 이미지 / 멀티 뷰</div>
+            <div id="product-detail-info">
+              <h3 style="font-size:24px; font-weight:800; color: var(--color-navy); margin-bottom:16px;">도어 구동 모터</h3>
+              <p style="color: var(--color-text-sub); margin-bottom: 24px;">엘리베이터 도어의 개폐를 정밀하게 제어하는 구동 장치입니다. 낮은 소음과 높은 내구성으로 국내 주요 제조사에 납품 중입니다.</p>
+              <table class="product-detail-spec-table">
+                <tr><th>품번</th><td>GW-D001</td></tr>
+                <tr><th>소재</th><td>알루미늄 합금 (A6061)</td></tr>
+                <tr><th>규격</th><td>120 × 80 × 60mm</td></tr>
+                <tr><th>정격 전압</th><td>AC 220V / DC 24V</td></tr>
+                <tr><th>정격 출력</th><td>120W</td></tr>
+                <tr><th>인증</th><td>KS, ISO 9001</td></tr>
+              </table>
+              <div style="display:flex; gap:12px; margin-top:24px;">
+                <a href="https://forms.gle/qaMF1XsmktgZLAMK8" target="_blank" class="btn-primary">견적 문의</a>
+                <button style="padding:14px 24px; border:1px solid var(--color-border); border-radius:var(--radius); font-size:15px; font-weight:600; cursor:pointer;">도면 다운로드 (PDF)</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- /page-products -->
+
+
+    <!-- ============================================================
+         PAGE: 기술력 (TECHNOLOGY)
+         id: page-technology
+    ============================================================ -->
+    <div id="page-technology">
+
+      <!-- 제조 공정 -->
+      <section id="section-tech-process" class="section-padding">
+        <div class="container">
+          <div class="section-header">
+            <span class="badge">PROCESS</span>
+            <h2 class="section-title">제조 공정</h2>
+            <p class="section-subtitle">원자재 입고부터 출하까지 전 공정을 직접 관리합니다</p>
+          </div>
+          <div id="process-steps">
+            <div class="process-step">
+              <div class="process-step-number">01</div>
+              <p class="process-step-label">원자재 입고</p>
+              <p class="process-step-desc">입고 검수 및<br/>성분 분석</p>
+            </div>
+            <div class="process-step">
+              <div class="process-step-number">02</div>
+              <p class="process-step-label">정밀 가공</p>
+              <p class="process-step-desc">CNC 머시닝<br/>센터 가공</p>
+            </div>
+            <div class="process-step">
+              <div class="process-step-number">03</div>
+              <p class="process-step-label">열처리</p>
+              <p class="process-step-desc">강도 및<br/>경도 향상</p>
+            </div>
+            <div class="process-step">
+              <div class="process-step-number">04</div>
+              <p class="process-step-label">표면 처리</p>
+              <p class="process-step-desc">도금 / 도장<br/>처리</p>
+            </div>
+            <div class="process-step">
+              <div class="process-step-number">05</div>
+              <p class="process-step-label">품질 검수</p>
+              <p class="process-step-desc">전수 검사<br/>3D 측정</p>
+            </div>
+            <div class="process-step">
+              <div class="process-step-number">06</div>
+              <p class="process-step-label">포장 & 출하</p>
+              <p class="process-step-desc">안전 포장 및<br/>납기 출하</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 품질 인증 -->
+      <section id="section-tech-certification" class="section-padding">
+        <div class="container">
+          <div class="section-header">
+            <span class="badge">CERTIFICATION</span>
+            <h2 class="section-title">품질 인증</h2>
+            <p class="section-subtitle">국내외 공인 인증으로 품질을 증명합니다</p>
+          </div>
+          <div id="cert-grid">
+            <div class="cert-card">
+              <div class="cert-card-image">인증서 이미지</div>
+              <p class="cert-card-title">ISO 9001</p>
+              <p class="cert-card-date">품질경영시스템 / 2024 갱신</p>
+            </div>
+            <div class="cert-card">
+              <div class="cert-card-image">인증서 이미지</div>
+              <p class="cert-card-title">KS 인증</p>
+              <p class="cert-card-date">한국산업표준 / 취득연도</p>
+            </div>
+            <div class="cert-card">
+              <div class="cert-card-image">인증서 이미지</div>
+              <p class="cert-card-title">벤처기업 인증</p>
+              <p class="cert-card-date">중소벤처기업부 / 취득연도</p>
+            </div>
+            <div class="cert-card">
+              <div class="cert-card-image">인증서 이미지</div>
+              <p class="cert-card-title">기업부설 연구소</p>
+              <p class="cert-card-date">한국산업기술진흥협회</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 설비 현황 -->
+      <section id="section-tech-equipment" class="section-padding">
+        <div class="container">
+          <div class="section-header">
+            <span class="badge">EQUIPMENT</span>
+            <h2 class="section-title">설비 현황</h2>
+            <p class="section-subtitle">최신 장비로 정밀 부품을 생산합니다</p>
+          </div>
+          <div id="equipment-table-wrap">
+            <table id="equipment-table">
+              <thead>
+                <tr>
+                  <th>설비명</th>
+                  <th>메이커</th>
+                  <th>규격</th>
+                  <th>보유 수량</th>
+                  <th>용도</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>CNC 머시닝센터</td>
+                  <td>OO사</td>
+                  <td>5축 / 가공범위 500×400mm</td>
+                  <td>4대</td>
+                  <td>정밀 부품 가공</td>
+                </tr>
+                <tr>
+                  <td>CNC 선반</td>
+                  <td>OO사</td>
+                  <td>최대 가공경 φ300mm</td>
+                  <td>6대</td>
+                  <td>회전체 부품 가공</td>
+                </tr>
+                <tr>
+                  <td>3D 측정기</td>
+                  <td>OO사</td>
+                  <td>측정범위 600×500×400mm</td>
+                  <td>1대</td>
+                  <td>치수 정밀 검사</td>
+                </tr>
+                <tr>
+                  <td>열처리로</td>
+                  <td>OO사</td>
+                  <td>최대 처리온도 1,200℃</td>
+                  <td>2대</td>
+                  <td>강도 향상 열처리</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- /page-technology -->
+
+
+    <!-- ============================================================
+         PAGE: 납품실적 (REFERENCES)
+         id: page-references
+    ============================================================ -->
+    <div id="page-references">
+
+      <!-- 납품 통계 -->
+      <section id="section-ref-stats">
+        <div class="container">
+          <div id="ref-stats-grid">
+            <div class="ref-stat-item">
+              <div class="ref-stat-number">500+</div>
+              <div class="ref-stat-label">누적 거래처 수</div>
+            </div>
+            <div class="ref-stat-item">
+              <div class="ref-stat-number">100만+</div>
+              <div class="ref-stat-label">누적 납품 수량</div>
+            </div>
+            <div class="ref-stat-item">
+              <div class="ref-stat-number">20년+</div>
+              <div class="ref-stat-label">업계 경력</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 주요 납품 프로젝트 -->
+      <section id="section-ref-projects" class="section-padding">
+        <div class="container">
+          <div class="section-header">
+            <span class="badge">REFERENCES</span>
+            <h2 class="section-title">주요 납품 실적</h2>
+            <p class="section-subtitle">다양한 프로젝트에 부품을 공급해 왔습니다</p>
+          </div>
+          <div id="ref-projects-grid">
+            <div class="ref-project-card">
+              <p class="ref-project-client">OO 엘리베이터</p>
+              <h3 class="ref-project-title">대형 주상복합 엘리베이터 부품 납품</h3>
+              <p class="ref-project-desc">도어 시스템 부품 전량 납품, 400세대 규모 적용</p>
+              <p class="ref-project-year">2023년</p>
+            </div>
+            <div class="ref-project-card">
+              <p class="ref-project-client">OO 건설</p>
+              <h3 class="ref-project-title">아파트 단지 엘리베이터 유지보수 부품 공급</h3>
+              <p class="ref-project-desc">1,200세대 단지 전체 엘리베이터 부품 유지보수 공급 계약</p>
+              <p class="ref-project-year">2022년</p>
+            </div>
+            <div class="ref-project-card">
+              <p class="ref-project-client">OO 제조사</p>
+              <h3 class="ref-project-title">신규 모델 안전 장치 공동 개발 납품</h3>
+              <p class="ref-project-desc">R&D 협력을 통해 신규 비상 정지 장치 개발 및 양산 납품</p>
+              <p class="ref-project-year">2021년</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- /page-references -->
+
+
+    <!-- ============================================================
+         PAGE: 공지사항 / 뉴스 (NEWS)
+         id: page-news
+    ============================================================ -->
+    <div id="page-news">
+
+      <section id="section-news-list" class="section-padding">
+        <div class="container">
+          <div class="section-header">
+            <span class="badge">NEWS</span>
+            <h2 class="section-title">공지사항 / 뉴스</h2>
+            <p class="section-subtitle">건웅기계의 최신 소식을 확인하세요</p>
+          </div>
+          <ul id="news-list">
+            <li class="news-item">
+              <div class="news-item-date">
+                <div class="news-date-day">15</div>
+                <div class="news-date-month">2025.05</div>
+              </div>
+              <div>
+                <span class="news-item-tag">공지</span>
+                <h3 class="news-item-title">2025년 하계 휴가 안내</h3>
+                <p class="news-item-preview">건웅기계 하계 휴가 일정을 안내드립니다. 8월 ...</p>
+              </div>
+            </li>
+            <li class="news-item">
+              <div class="news-item-date">
+                <div class="news-date-day">02</div>
+                <div class="news-date-month">2025.04</div>
+              </div>
+              <div>
+                <span class="news-item-tag">뉴스</span>
+                <h3 class="news-item-title">ISO 9001 품질경영시스템 인증 갱신 완료</h3>
+                <p class="news-item-preview">건웅기계가 ISO 9001 인증을 성공적으로 갱신하였습니다 ...</p>
+              </div>
+            </li>
+            <li class="news-item">
+              <div class="news-item-date">
+                <div class="news-date-day">18</div>
+                <div class="news-date-month">2025.03</div>
+              </div>
+              <div>
+                <span class="news-item-tag">보도자료</span>
+                <h3 class="news-item-title">2025 승강기 산업 엑스포 참가 안내</h3>
+                <p class="news-item-preview">건웅기계가 2025 승강기 산업 엑스포에 참가합니다. 부스 번호 ...</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+    </div><!-- /page-news -->
+
+
+    <!-- ============================================================
+         PAGE: 문의하기 (CONTACT)
+         id: page-contact
+    ============================================================ -->
+    <div id="page-contact">
+
+      <!-- 문의 폼 -->
+      <section id="section-contact-form" class="section-padding">
+        <div class="container">
+          <div class="section-header">
+            <span class="badge">CONTACT</span>
+            <h2 class="section-title">문의하기</h2>
+            <p class="section-subtitle">견적 문의, 기술 상담, 제품 문의 무엇이든 연락주세요</p>
+          </div>
+          <div id="contact-layout">
+
+            <div id="contact-info-panel">
+              <div class="contact-info-card">
+                <p class="contact-info-title">연락처 정보</p>
+                <div class="contact-info-row">
+                  <div class="contact-info-row-icon">📞</div>
+                  <div class="contact-info-row-text">
+                    <strong>대표 전화</strong>
+                    <span>031-635-7817</span>
+                  </div>
+                </div>
+                <div class="contact-info-row">
+                  <div class="contact-info-row-icon">📱</div>
+                  <div class="contact-info-row-text">
+                    <strong>휴대전화 (대표이사 유승균)</strong>
+                    <span>010-9980-9685</span>
+                  </div>
+                </div>
+                <div class="contact-info-row">
+                  <div class="contact-info-row-icon">✉️</div>
+                  <div class="contact-info-row-text">
+                    <strong>이메일</strong>
+                    <span>kunwoong2002@hanmail.net</span>
+                  </div>
+                </div>
+                <div class="contact-info-row">
+                  <div class="contact-info-row-icon">📍</div>
+                  <div class="contact-info-row-text">
+                    <strong>주소</strong>
+                    <span>경기도 이천시 부발읍 황무로 2065번길 72-183</span>
+                  </div>
+                </div>
+                <div class="contact-info-row">
+                  <div class="contact-info-row-icon">🕐</div>
+                  <div class="contact-info-row-text">
+                    <strong>응답 시간</strong>
+                    <span>평일 09:00 – 18:00<br/>접수 후 24시간 이내 회신</span>
+                  </div>
+                </div>
+              </div>
+              <div class="contact-info-card">
+                <p class="contact-info-title">카카오톡 채널</p>
+                <p style="font-size:14px; color: var(--color-text-sub);">카카오톡에서 <strong>건웅기계</strong>를 검색하시면 빠른 상담이 가능합니다.</p>
+                <div style="margin-top:16px; height:48px; background:#FEE500; border-radius:var(--radius); display:flex; align-items:center; justify-content:center; font-weight:700; font-size:14px; cursor:pointer;">
+                  카카오톡 채널 바로가기
+                </div>
+              </div>
+            </div>
+
+            <div id="contact-form-panel">
+              <form id="inquiry-form">
+                <div class="form-group-row">
+                  <div class="form-group">
+                    <label>회사명 <span class="required">*</span></label>
+                    <input type="text" placeholder="회사명을 입력하세요" />
+                  </div>
+                  <div class="form-group">
+                    <label>담당자명 <span class="required">*</span></label>
+                    <input type="text" placeholder="담당자 성명" />
+                  </div>
+                </div>
+                <div class="form-group-row">
+                  <div class="form-group">
+                    <label>연락처 <span class="required">*</span></label>
+                    <input type="tel" placeholder="010-0000-0000" />
+                  </div>
+                  <div class="form-group">
+                    <label>이메일 <span class="required">*</span></label>
+                    <input type="email" placeholder="name@company.com" />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>문의 유형 <span class="required">*</span></label>
+                  <select>
+                    <option value="">선택해 주세요</option>
+                    <option>견적 문의</option>
+                    <option>제품 기술 상담</option>
+                    <option>납품 계약 문의</option>
+                    <option>AS / 교체 부품 문의</option>
+                    <option>기타</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>문의 내용 <span class="required">*</span></label>
+                  <textarea placeholder="제품명, 수량, 납기 등 구체적인 내용을 작성해 주시면 빠른 답변이 가능합니다."></textarea>
+                </div>
+                <div class="form-group">
+                  <label>파일 첨부 (도면, 규격서 등)</label>
+                  <div id="contact-form-file">
+                    여기에 파일을 드래그하거나 클릭하여 업로드<br/>
+                    <span style="font-size:12px;">(PDF, DWG, JPG 등 최대 10MB)</span>
+                  </div>
+                </div>
+                <button type="submit" class="btn-primary" id="form-submit">문의 보내기</button>
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- 지도 -->
+      <section id="section-contact-map">
+        <div id="contact-map-embed">카카오맵 / 구글맵 임베드 영역 (전체 너비)</div>
+      </section>
+
+    </div><!-- /page-contact -->
+
+  </div><!-- /main-content -->
+
+
+  <!-- ============================================================
+       FOOTER
+       id: section-footer
+  ============================================================ -->
+  <footer id="section-footer">
+    <div class="container">
+      <div id="footer-top">
+        <div>
+          <div id="footer-logo">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAbwAAADJCAYAAABYKIcZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMNaVRYdFhNTDpjb20uYWRvYmUueG1wAAAAAAA8P3hwYWNrZXQgYmVnaW49J++7vycgaWQ9J1c1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCc/Pg0KPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyI+PHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj48cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0idXVpZDpmYWY1YmRkNS1iYTNkLTExZGEtYWQzMS1kMzNkNzUxODJmMWIiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyI+PHhtcDpDcmVhdG9yVG9vbD5BZG9iZSBJbGx1c3RyYXRvciAzMC4xIChXaW5kb3dzKTwveG1wOkNyZWF0b3JUb29sPjx4bXA6Y3JlYXRvcnRvb2w+QWRvYmUgSWxsdXN0cmF0b3IgMzAuMSAoV2luZG93cyk8L3htcDpjcmVhdG9ydG9vbD48L3JkZjpEZXNjcmlwdGlvbj48cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0idXVpZDpmYWY1YmRkNS1iYTNkLTExZGEtYWQzMS1kMzNkNzUxODJmMWIiIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyI+PGRjOnRpdGxlPjxyZGY6QWx0IHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+PHJkZjpsaSB4bWw6bGFuZz0ieC1kZWZhdWx0Ij7rqoXtlago7LWc7KKFX+ycoOyKueq3oCk8L3JkZjpsaT48L3JkZjpBbHQ+DQoJCQk8L2RjOnRpdGxlPjwvcmRmOkRlc2NyaXB0aW9uPjwvcmRmOlJERj48L3g6eG1wbWV0YT4NCjw/eHBhY2tldCBlbmQ9J3cnPz7ZY59KAAA97klEQVR4Xu2daZfjoK6uX+EhY83d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" alt="건웅기계 로고" />
+          </div>
+          <p id="footer-tagline">
+            KUNWOONG MACHINERY CO.,LTD.<br/>
+            승강기·산업기계 부품 전문 제조기업
+          </p>
+          <p style="font-size:13px; margin-top:8px;">대표이사: 유승균 &nbsp;|&nbsp; T. 031-635-7817</p>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-title">회사</p>
+          <ul>
+            <li><a href="#section-about-greeting">인사말</a></li>
+            <li><a href="#section-about-history">회사 연혁</a></li>
+            <li><a href="#section-about-vision">비전 & 미션</a></li>
+            <li><a href="#section-about-location">오시는 길</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-title">제품 & 기술</p>
+          <ul>
+            <li><a href="#section-products-filter">제품 목록</a></li>
+            <li><a href="#section-tech-process">제조 공정</a></li>
+            <li><a href="#section-tech-certification">품질 인증</a></li>
+            <li><a href="#section-ref-projects">납품 실적</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-title">고객지원</p>
+          <ul>
+            <li><a href="https://forms.gle/qaMF1XsmktgZLAMK8" target="_blank">견적 문의</a></li>
+            <li><a href="#section-news-list">공지사항</a></li>
+            <li><a href="#section-contact-form">기술 상담</a></li>
+            <li><a href="#section-contact-form">AS 문의</a></li>
+          </ul>
+        </div>
+      </div>
+      <div id="footer-bottom">
+        <span>© 2025 건웅기계주식회사 KUNWOONG MACHINERY CO.,LTD. All rights reserved. &nbsp;|&nbsp; 경기도 이천시 부발읍 황무로 2065번길 72-183 &nbsp;|&nbsp; 031-635-7817</span>
+        <div style="display:flex; gap:20px;">
+          <a href="#">개인정보처리방침</a>
+          <a href="#">이용약관</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const ham = document.getElementById('nav-hamburger');
+    const mob = document.getElementById('nav-mobile-menu');
+    ham.addEventListener('click', () => {
+      ham.classList.toggle('open');
+      mob.classList.toggle('open');
+      document.body.style.overflow = mob.classList.contains('open') ? 'hidden' : '';
+    });
+    mob.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        ham.classList.remove('open');
+        mob.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+  </script>
+</body>
+</html>

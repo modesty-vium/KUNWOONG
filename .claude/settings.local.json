@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__mcp-registry__search_mcp_registry",
+      "mcp__mcp-registry__list_connectors",
+      "WebSearch",
+      "WebFetch(domain:unsplash.com)",
+      "Bash(ls -la \"C:\\\\Users\\\\bitcamp\\\\Downloads\\\\260528 건웅기계\\\\\" | grep -i \"kakao\\\\|jpg\\\\|png\")",
+      "Bash(py --version)",
+      "Bash(npx --version)",
+      "mcp__Claude_Preview__preview_start",
+      "mcp__Claude_in_Chrome__list_connected_browsers",
+      "Bash(vercel --version)",
+      "Bash(npm --version)",
+      "Bash(npm install *)",
+      "Bash(vercel --yes)",
+      "Bash(vercel --yes --name gunwoong-machinery)",
+      "Bash(git --version)",
+      "Bash(gh --version)",
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git branch *)",
+      "Bash(git remote *)"
+    ]
+  }
+}
