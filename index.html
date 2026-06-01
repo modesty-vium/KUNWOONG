@@ -974,10 +974,7 @@
     #section-contact-map { background: var(--color-white); padding: 0; }
     #contact-map-embed {
       height: 400px;
-      background: #D0DDE8;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: block;
       color: var(--color-text-sub);
       font-weight: 600;
       font-size: 18px;
@@ -2040,7 +2037,17 @@
 
       <!-- 지도 -->
       <section id="section-contact-map">
-        <div id="contact-map-embed">카카오맵 / 구글맵 임베드 영역 (전체 너비)</div>
+        <div id="contact-map-embed">
+          <iframe
+            src="https://map.kakao.com/?embed=true&marker=true&type=m&maptype=roadmap&pan=false&zoom=false&addr=%EA%B2%BD%EA%B8%B0%EB%8F%84+%EC%9D%B4%EC%B2%9C%EC%8B%9C+%EB%B6%80%EB%B0%9C%EC%9D%8D+%ED%99%A9%EB%AC%B4%EB%A1%9C+2065%EB%B2%88%EA%B8%B8+72-183&name=%EA%B1%B4%EC%9B%85%EA%B8%B0%EA%B3%84%EC%A3%BC%EC%8B%9D%ED%9A%8C%EC%82%AC"
+            width="100%"
+            height="400"
+            frameborder="0"
+            style="border:0; display:block;"
+            allowfullscreen
+            title="건웅기계주식회사 위치"
+          ></iframe>
+        </div>
       </section>
 
     </div><!-- /page-contact -->
