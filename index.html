@@ -2253,6 +2253,11 @@
     function openAuthModal() {
       document.getElementById('auth-modal-overlay').classList.add('open');
       document.body.style.overflow = 'hidden';
+      // 항상 깨끗한 상태로 열기 (버튼 복구 + 메시지 초기화)
+      const btn = document.getElementById('auth-submit');
+      btn.disabled = false;
+      btn.textContent = (authMode === 'signup') ? '가입하기' : '로그인';
+      setMsg('', '');
     }
     function closeAuthModal() {
       document.getElementById('auth-modal-overlay').classList.remove('open');
@@ -2281,22 +2286,32 @@
       const email = document.getElementById('auth-email').value.trim();
       const password = document.getElementById('auth-password').value;
       const btn = document.getElementById('auth-submit');
+      const origText = (authMode === 'signup') ? '가입하기' : '로그인';
       btn.disabled = true;
+      btn.textContent = (authMode === 'signup') ? '가입 중...' : '로그인 중...';
+      setMsg('', '');
+
+      // 네트워크 행(hang) 방지용 안전 타임아웃 (15초)
+      const timeout = new Promise((_, reject) =>
+        setTimeout(() => reject(new Error('네트워크 응답이 지연됩니다. 잠시 후 다시 시도해 주세요.')), 15000));
 
       try {
         if (authMode === 'signup') {
           const name = document.getElementById('auth-name').value.trim();
           const company = document.getElementById('auth-company').value.trim();
           const phone = document.getElementById('auth-phone').value.trim();
-          const { error } = await sb.auth.signUp({
-            email, password,
-            options: { data: { name, company, phone } }
-          });
+          const { error } = await Promise.race([
+            sb.auth.signUp({ email, password, options: { data: { name, company, phone } } }),
+            timeout
+          ]);
           if (error) throw error;
-          setMsg('가입 완료! 이메일 인증 후 로그인해 주세요.', 'success');
+          setMsg('가입 완료! 이제 로그인해 주세요.', 'success');
           setTimeout(() => setAuthMode('login'), 1500);
         } else {
-          const { data, error } = await sb.auth.signInWithPassword({ email, password });
+          const { data, error } = await Promise.race([
+            sb.auth.signInWithPassword({ email, password }),
+            timeout
+          ]);
           if (error) throw error;
           await recordLogin(data.user);
           setMsg('로그인 성공!', 'success');
@@ -2306,6 +2321,7 @@
         setMsg(translateError(err.message), 'error');
       } finally {
         btn.disabled = false;
+        btn.textContent = origText;
       }
     }
 
